@@ -1,0 +1,25 @@
+package LeetCode;
+
+import java.util.Scanner;
+
+public class SumWithoutArithmaticOperator {
+
+	public static void main(String[] args){
+		int a, b;
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter 2 number: ");
+		a = in.nextInt();
+		b = in.nextInt();
+		System.out.println("The sum is: " + add(a,b));
+	}
+	
+	static int add(int a, int b){
+		int carry;
+		while(b != 0){
+			carry = a & b;
+			a = a ^ b;
+			b = carry << 1;
+		}
+		return a;
+	}
+}
