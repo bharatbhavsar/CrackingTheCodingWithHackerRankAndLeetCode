@@ -48,28 +48,28 @@ public class MatrixRotationMXN {
 	}
 	
 	int[][] matrixRotation90Right(int[][] matrix, int row, int column){
-		int returnRow = column;
-		int returnColumn = row;
-		int[][] returnMatrix = new int[returnRow][returnColumn];
+		int resRow = column;
+		int resColumn = row;
+		int[][] resMatrix = new int[resRow][resColumn];
 		for(int i = 0; i < row; i++){
 			for(int j = 0; j < column; j++){
-				returnMatrix[j][returnColumn - 1 - i] = matrix[i][j];
+				resMatrix[j][resColumn - 1 - i] = matrix[i][j];
 			}
 		}
 		
-		return returnMatrix;
+		return resMatrix;
 	}
 	
 	int[][] matrixRotation90Left(int[][] matrix, int row, int column){
-		int returnRow = column;
-		int returnColumn = row;
-		int[][] returnMatrix = new int[returnRow][returnColumn];
+		int resRow = column;
+		int resColumn = row;
+		int[][] resMatrix = new int[resRow][resColumn];
 		for(int i = 0; i < row; i++){
 			for(int j = 0; j < column; j++){
-				returnMatrix[returnRow - 1 - j][i] = matrix[i][j];
+				resMatrix[resRow - 1 - j][i] = matrix[i][j];
 			}
 		}
 		
-		return returnMatrix;
+		return resMatrix;
 	}
 }

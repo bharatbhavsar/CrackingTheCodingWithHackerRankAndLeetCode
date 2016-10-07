@@ -23,39 +23,39 @@ public class AddOneToNumberArray {
 		}
 	}
 	public static int[] plusOne(int[] digits) {
-        ArrayList<Integer> returnNumber = new ArrayList<Integer>();
+        ArrayList<Integer> resNumber = new ArrayList<Integer>();
         int carry = 1;
         for(int i = digits.length-1; i>=0; i--){
             int mod = (digits[i]+carry)%10;
-            returnNumber.add(0, mod);;
+            resNumber.add(0, mod);;
             carry = (digits[i]+carry)/10;
         }
         if(carry == 1){
-            returnNumber.add(0,1);
+            resNumber.add(0,1);
         }
-        int[] result = new int[returnNumber.size()];
+        int[] result = new int[resNumber.size()];
         
         for(int i = 0; i< result.length; i++){
-        	result[i]=returnNumber.get(i).intValue();
+        	result[i]=resNumber.get(i).intValue();
         }
         return result;
     }
 	
 	public static int[] plusOne2(int[] digits) {
-        int[] returnNumber = new int[digits.length+1];
+        int[] result = new int[digits.length+1];
         int carry = 1;
         for(int i = digits.length-1; i>=0; i--){
             int mod = (digits[i]+carry)%10;
-            returnNumber[i+1]=mod;
+            result[i+1]=mod;
             carry = (digits[i]+carry)/10;
         }
         if(carry == 1){
-            returnNumber[0]=1;
+            result[0]=1;
         }
-        if(returnNumber[0]==1){
-        	return returnNumber;
+        if(result[0]==1){
+        	return result;
         }else{
-        	return Arrays.copyOfRange(returnNumber, 1, returnNumber.length);
+        	return Arrays.copyOfRange(result, 1, result.length);
         }
     }
 }

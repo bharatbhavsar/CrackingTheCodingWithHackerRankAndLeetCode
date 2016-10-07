@@ -35,13 +35,15 @@ public class FindAllSubsets {
 	}
 	
 	static List<List<Integer>> allSubSets(int[] nums){
+		
+		List<List<Integer>> result = new ArrayList<List<Integer>>();
 		if(nums == null){
-			return null;
+			return result;
 		}
 		
 		Arrays.sort(nums);
 		
-		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		
 		
 		for(int i = 0; i < nums.length; i++){
 			List<List<Integer>> temp = new ArrayList<List<Integer>>();
