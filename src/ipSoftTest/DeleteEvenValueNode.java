@@ -41,4 +41,4 @@ public class DeleteEvenValueNode {
 class LinkedListNode {
     int val;
     LinkedListNode next;
-};
+}
