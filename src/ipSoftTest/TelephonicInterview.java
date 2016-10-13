@@ -19,8 +19,9 @@ public class TelephonicInterview {
 	    }
 	    
 	    Bar temp = new Bar();
+	    
 	    for(int i=0; i<stuff.size();i++){
-	        if(stuff.get(i).getClass()==temp.getClass()){
+	        if(stuff.get(i) instanceof Bar){
 	            temp = (Bar) stuff.get(i);
 	        }
 	    }
