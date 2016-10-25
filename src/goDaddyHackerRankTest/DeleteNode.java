@@ -1,3 +1,4 @@
+package goDaddyHackerRankTest;
 
 public class DeleteNode {
 
