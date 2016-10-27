@@ -23,6 +23,7 @@ package LeetCode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class FindAllSubsets {
@@ -32,11 +33,13 @@ public class FindAllSubsets {
 		for(List<Integer> result : allSubSets(nums)){
 			System.out.println(result);
 		}
+		
 	}
 	
 	static List<List<Integer>> allSubSets(int[] nums){
 		
 		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		
 		if(nums == null){
 			return result;
 		}
@@ -68,4 +71,5 @@ public class FindAllSubsets {
 		
 		return result;
 	}
+	
 }
