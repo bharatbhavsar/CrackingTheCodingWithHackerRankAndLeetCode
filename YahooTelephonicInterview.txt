@@ -1,0 +1,205 @@
+//This was quit a long interview of about 1.5 hrs. Overall discussion was good 
+//and interviewer tried to know about my understanding around datastructures such as LinkedList, BinaryTree.
+//Solutions below are not complete or fully running one as definitely these kind of data structures need 
+//some prior code for handling these data structures and their behaviour.
+
+
+
+/*
+Create a linked list with an integer.
+
+*/
+
+import java.io.*;
+import java.util.*;
+
+class LinkedListNode{
+
+  int val;
+  LinkedListNode next;
+  
+  
+  
+  public LinkedListNode(int x){
+  
+    this.val = x;
+    this.next = null;
+  }
+  
+  
+  public void add(int x){
+  
+    LinkedListNode temp = this;
+    
+    if(head==null){
+      temp = new LinkedListNode(x);
+    }else{
+      while(temp.next!=null){
+        temp=temp.next;
+      }
+      LinkedListNode n = new LinkedListNode(x);
+      temp.next=n;
+    }
+    
+    //return head;
+  }
+  
+  public void add(int[] x){
+  
+    LinkedListNode temp = this;
+    
+    if(head==null){
+      temp = new LinkedListNode(x);
+    }else{
+      while(temp.next!=null){
+        temp=temp.next;
+      }
+      
+      for(int i=0; i<x.length; i++){
+        LinkedListNode n = new LinkedListNode(x);
+        temp.next=n;
+        temp=temp.next;
+      }
+    }
+    
+    //return head;
+  }
+  
+  
+  
+  public boolean remove(int x){
+  
+    (this==null || this.size()<x){
+      return false;
+    }
+    
+    LinkedListNode prev = this;
+    LinkedListNode next = this;
+    
+    while(x>=0){
+      next = next.next;
+    }
+    
+    while(next.next!=null){
+      prev=prev.next;
+      next=next.next;
+    }
+    
+    prev.next=prev.next.next;
+    return true;
+  
+  }
+  
+  int size(){
+    
+  }
+
+}
+
+class solution{
+  public static void main(String[] args){
+
+    LinkedListNode head = new LinkedListNode(1);
+
+    int[] arr = {2,3,4,5};
+
+    //for(int i=0; i < arr.length; i++){
+      head.add(arr);
+    //}
+
+
+    head.remove(2); // remove the 2nd last node from linked list
+    head.remove(3); // remove the 3rd last node
+    
+    
+    //BinaryTree
+    
+    int[] arr1 = {1,2,3,4,5,6,7};
+    
+    BinaryTreeNode root = new BinaryTreeNode(1);
+    BinaryTreeNode temp = root;
+    root.left = new BinaryTreeNode(2);
+    root.right = new BinaryTreeNode(3);
+    
+    root=root.left;
+    root.left = new BinaryTreeNode(4);
+    root.right = new BinaryTreeNode(5);
+    
+    root=root.right;
+    root.left = new BinaryTreeNode(6);
+    root.right = new BinaryTreeNode(7);
+    root=temp;
+    
+    
+    
+
+  }
+  
+  
+  static BinaryTreeNode LCA(BinaryTreeNode root, int va1, int val2){
+  
+    if(root==null){
+      
+      return root;
+      
+    }else{
+    
+      ArrayList<BinaryTreeNode> val1List = new ArrayList<BinaryTreeNode>();
+      ArrayList<BinaryTreeNode> val2List = new ArrayList<BinaryTreeNode>();
+      
+      val1List=findPath(val1List, root, val1);
+      val2List=findPath(val2List, root, val2);
+      
+      Collections.reverse(val1List); // 2,1
+      Collections.reverse(val2List); // 4,2,1
+      
+      HashSet<BinaryTreeNode> mySet = new HashSet<BinaryTreeNode>();
+      
+      for(int i=0; i<val1List.size(); i++){
+        mySet.add(val1List.get(i));
+      }
+      
+      for(int i=0; i<val2List.size(); i++){
+        if(mySet.contains(val2List.get(i)){
+          return val2List.get(i);
+        }
+      }
+      
+      /*
+      for(int i=0; i<val1List.size(); i++){
+        for(int j=0; j<val2List.size(); j++){
+          if(val1List.get(i)==val2List.get(i)){
+          
+            return val1List.get(i);
+          }
+        }
+      }*/
+           
+    }
+    
+    return null;
+  }
+           
+ // BTN(4)-> 2 -> 5 -> 1 -> 6 -> 3 -> 7          
+  /*
+   Brute force : create a linked list from inorder traversal and iterate over the list and update right and left pointers.
+  
+  */
+}
+
+
+
+class BinaryTreeNode{
+
+  int val;
+  
+  BinarTreeNode left;
+  BinaryTreeNode right;
+  
+  public BinaryTreeNode(int x){
+    this.val = x;
+    this.left = null;
+    this.right = null;
+  }
+
+}
