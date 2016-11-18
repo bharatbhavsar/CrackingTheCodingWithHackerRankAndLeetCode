@@ -203,3 +203,132 @@ class BinaryTreeNode{
   }
 
 }
+
+
+
+
+
+
+
+
+
+// Final Telephonic Interview on PIG
+
+/*
+Question 1:
+
+Sales person file
+
+c
+1   Abe     61  140000
+2   Bob     34  44000
+5   Chris   34  40000
+7   Dan     41  52000
+8   Ken     57  115000
+11  Joe     38  38000
+
+
+Customer File
+
+ID  Name        City    Industry Type
+4   Samsonic    pleasant    J
+6   Panasung    oaktown     J
+7   Samony      jackson     B
+9   Orange      Jackson     B
+
+
+Orders file
+
+Number  order_date  cust_id salesperson_id  Amount
+10       8/2/96      4           2           540
+20      1/30/99      4           8           1800
+30      7/14/95      9           1           460
+40      1/29/98      7           2           2400
+50      2/3/98       6           7           600
+60      3/2/98       6           7           720
+70      5/6/98       9           7           150
+
+
+Write a pig script to generate and store
+a. The names of all salespeople that have an order with Samsonic.
+b. The names of all salespeople that do not have any order with Samsonic.
+c. The names of salespeople that have 2 or more orders.
+d. find the largest order amount for each salesperson and the associated order number, along with the customer to whom that order belongs to.
+e. if a salesperson gets 1% commission on day's highest sell, .5% on second highest sell, .1% on remaining, please generate total income earned by each salesperson in a year.
+
+
+
+
+
+
+*/
+ASSSUMPTION: 
+1) files are in same directory
+
+
+
+order = LOAD 'order.txt' AS (Number:int,  order_date:chararray,   cust_id:int, salesperson_id:int,  Amount:int);
+customer = LOAD 'customer.txt' AS (ID:int,  Name:chararray,        City:chararray,    Industry Type:chararray);
+sales = LOAD 'sales.txt' AS (ID:int,  Name:chararray,    Age:int, Salary:int);
+
+
+
+
+samsonicOrder = filter order by cust_id != 4;
+
+salesID = foreach samsonicOrder generate salesperson_id;
+
+answer = Join sales by ID, salesID by salesperson_id;
+
+finalAnswer = foreach answer generate name; 
+
+dump finalAnswer;
+
+
+
+
++++variation (We do not want to hardcode the customer id )
+
+Question => pig -p name=Samsonic test.pig
+
+order = LOAD 'order.txt' AS (Number:int,  order_date:chararray,   cust_id:int, salesperson_id:int,  Amount:int);
+customer = LOAD 'customer.txt' AS (ID:int,  Name:chararray,        City:chararray,    Industry Type:chararray);
+sales = LOAD 'sales.txt' AS (ID:int,  Name:chararray,    Age:int, Salary:int);
+
+filteredID = filter customer by name = $name;
+
+
+
+//myOrder = filter order by cust_id != filteredID;
+
+myOrder = join order by cust_id, filteredID by id;
+
+salesID = foreach myOrder generate salesperson_id;
+
+answer = Join sales by ID, salesID by salesperson_id;
+
+finalAnswer = foreach answer generate name; 
+
+dump finalAnswer;
+
+
+
+
+c)
+order = LOAD 'order.txt' AS (Number:int,  order_date:chararray,   cust_id:int, salesperson_id:int,  Amount:int);
+customer = LOAD 'customer.txt' AS (ID:int,  Name:chararray,        City:chararray,    Industry Type:chararray);
+sales = LOAD 'sales.txt' AS (ID:int,  Name:chararray,    Age:int, Salary:int);
+
+myGroup = group order by salesperson_id;
+
+// myGroup : Bag{group:chararray, order:bag{Number:int,  order_date:chararray,   cust_id:int, salesperson_id:int,  Amount:int}}
+
+myCount = foreach myGroup generate salesperson_id, count(order) as countOfRecords;
+
+myResult = filter myCount by countOfRecords > 1;
+
+myJoin = Join myResult by salesperson_id, sales by id;
+
+finalAnswer = foreach myJoin generate name; 
+
+dump finalAnswer;
