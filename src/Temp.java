@@ -10,15 +10,9 @@ public class Temp {
 
 	public static void main(String[] args){
 		
-		String temp = "";
-		char c ='c';
-		temp=temp+c;
-		System.out.println(temp);
-		
-//		String last="Atvt hrqgse, Cnikg"; 
-//		
-//		System.out.println(findKey(last));
-//		getKey(findKey(last));
+		StringBuffer[] s = new StringBuffer[5];
+		s[0].append("Hallo, world");
+		System.out.println(s[0]);
 	}
 	
 	

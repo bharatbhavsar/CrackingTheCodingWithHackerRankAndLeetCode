@@ -1,0 +1,289 @@
+//////   UNIQUE ARRAY SUM //////
+
+int count = 0;
+     
+    // Pick all elements one by one
+    for (int i = 0; i < n; i++)
+    {       
+        // See if there is a pair of this picked element
+        for (int j = i+1; j < n; j++)
+            if (arr[i] - arr[j] == k || arr[j] + arr[i] == k )
+                  count++;
+    }
+    return count;
+
+
+///// Clockwise rotation  /////
+
+ for(int i=0; i<arr[0].length; i++){
+        for(int j=arr.length-1; j>=0; j--){
+            newArray[i][j] = arr[j][i];
+        }
+    }
+
+static int[][] rotateCW(int[][] mat) {
+    final int M = mat.length;
+    final int N = mat[0].length;
+    int[][] ret = new int[N][M];
+    for (int r = 0; r < M; r++) {
+        for (int c = 0; c < N; c++) {
+            ret[c][M-1-r] = mat[r][c];
+        }
+    }
+    return ret;
+}
+
+
+-------------------------------  Good solution of matrix rotation ----------------------------------
+
+
+Matrix rotation
+Rotate by +90: 
+Transpose 
+Reverse each row 
+
+Rotate by -90: 
+Transpose 
+Reverse each column 
+
+Rotate by +180: 
+Method 1: Rotate by +90 twice 
+Method 2: Reverse each row and then reverse each column 
+
+Rotate by -180: 
+Method 1: Rotate by -90 twice 
+Method 2: Reverse each column and then reverse each row 
+Method 3: Reverse by +180 as they are same
+
+------------------------------------------------------------------------------------------------
+
+Transpose:
+
+for ( c = 0 ; c < m ; c++ )
+      {
+         for ( d = 0 ; d < n ; d++ )               
+            transpose[d][c] = matrix[c][d];
+      }
+
+
+--------------------------------------------
+
+https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/linked%20lists.html
+
+--------------------------------------------------------------------------------------------------
+//// is a valid binary search tree /////
+
+public boolean isValidBST(TreeNode root) {
+    return isValidBST(root, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY);    
+}
+ 
+public boolean isValidBST(TreeNode p, double min, double max){
+    if(p==null) 
+        return true;
+ 
+    if(p.val <= min || p.val >= max)
+        return false;
+ 
+    return isValidBST(p.left, min, p.val) && isValidBST(p.right, p.val, max);
+}
+
+
+
+////  reverse second half /////////////////////
+
+
+ public static ListNode getcenter(ListNode head)
+
+{
+ListNode prevslwptr=null,slwptr=head,fastptr=head;
+
+if(head!=null)
+{
+while(fastptr.next!=null)
+{
+prevslwptr=slwptr;
+slwptr=slwptr.next;
+if(slwptr!=null)
+fastptr=slwptr.next;
+}
+}
+return prevslwptr;
+}
+
+ ptr= getcenter(head);
+centre= reverseList(ptr.next);
+ptr.next=centre;
+
+
+ public ListNode reverseList(ListNode head) {
+        if(head!=null)
+        {
+            ListNode prev = new ListNode(0);
+            ListNode next = new ListNode(0);
+            ListNode current = new ListNode(0);
+            prev = null;
+            current = null;
+            next= head;
+            while(next!=null)
+            {
+                current=next;
+                next=current.next;
+                current.next= prev;
+                prev=current;
+                
+            }
+            return current;
+        }
+        return null;
+    }
+
+------------------------------------------------------------------------------------------------------------------
+
+
+///////////////////////// level order traversal (BFS)    ////////////////////////////
+
+
+public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
+    ArrayList<ArrayList<Integer>> al = new ArrayList<ArrayList<Integer>>();
+    ArrayList<Integer> nodeValues = new ArrayList<Integer>();
+    if(root == null)
+        return al;
+ 
+    LinkedList<TreeNode> current = new LinkedList<TreeNode>();
+    LinkedList<TreeNode> next = new LinkedList<TreeNode>();
+    current.add(root);
+ 
+    while(!current.isEmpty()){
+        TreeNode node = current.remove();
+ 
+        if(node.left != null)
+            next.add(node.left);
+        if(node.right != null)
+            next.add(node.right);
+ 
+        nodeValues.add(node.val);
+        if(current.isEmpty()){
+            current = next;
+            next = new LinkedList<TreeNode>();
+            al.add(nodeValues);
+            nodeValues = new ArrayList();
+        }
+ 
+    }
+    return al;
+}
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+////////////////////////  Valid parantheses///////////////////////
+
+
+public static boolean isValid(String s) {
+	HashMap<Character, Character> map = new HashMap<Character, Character>();
+	map.put('(', ')');
+	map.put('[', ']');
+	map.put('{', '}');
+ 
+	Stack<Character> stack = new Stack<Character>();
+ 
+	for (int i = 0; i < s.length(); i++) {
+		char curr = s.charAt(i);
+ 
+		if (map.keySet().contains(curr)) {
+			stack.push(curr);
+		} else if (map.values().contains(curr)) {
+			if (!stack.empty() && map.get(stack.peek()) == curr) {
+				stack.pop();
+			} else {
+				return false;
+			}
+		}
+	}
+ 
+	return stack.empty();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+check is tree is a subtree
+
+public boolean equals(Node n1, Node n2) {
+    if (n1 == n2) return true;
+    if (n1 == null || n2 == null) return false;
+    if (n1.data != n2.data) return false; // Should use .equals if Node.data isn't primitive
+    return equals(n1.left, n2.left) && equals(n1.right, n2.right);
+}
+
+public boolean isSubtree(Node n1, Node n2) {
+    if (n2 == null) return true;
+    if (n1 == null) return false;
+    return equals(n1, n2) || isSubtree(n1.left, n2) || isSubtree(n1.right, n2);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Add front CLL
+
+node* AddFront(node* tail, int num)
+{
+	node *temp = (node*)malloc(sizeof(node));
+	temp->data = num;
+	temp->next = temp;	
+	if (tail == NULL) 
+		return temp;
+	temp->next = tail->next;
+	tail->next = temp;
+	return tail;
+}
+
+
+Add middle
+
+InsertAtlocDll(info,next,start,end,loc,size)
+1.set nloc = loc-1 , n=1
+2.create a new node and address in assigned to ptr.
+3.check[overflow] if(ptr=NULL)
+      write:overflow and exit 
+4.set Info[ptr]=item;
+5.if(start=NULL) 
+      set next[ptr] = NULL 
+      set start = ptr
+  else if(nloc<=size) 
+      repeat steps a and b while(n != nloc)
+    	
+		a.	loc = next[loc]
+		b.	n = n+1 
+		[end while]
+		next[ptr] = next[loc]  
+		next[loc] = ptr 
+   else
+		set last = start;
+		repeat step (a) while(next[last]!= NULL)
+		a. last=next[last]
+		[end while]
+		last->next = ptr ;
+      [end if]
+6.Exit.
+
+
+
+////////////////////
+
+
+node* AddEnd(node* tail, int num)
+{
+	node *temp = (node*)malloc(sizeof(node));
+	temp->data = num;
+	temp->next = temp;	
+	if (tail == NULL) 
+		return temp;
+	temp->next = tail->next;
+	tail->next = temp;
+	return temp;
+}
+
+
+///////////////////////////
