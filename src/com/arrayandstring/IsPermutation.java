@@ -1,3 +1,4 @@
+package com.arrayandstring;
 import java.util.*;
 public class IsPermutation {
 

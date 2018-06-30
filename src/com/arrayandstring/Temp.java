@@ -1,3 +1,4 @@
+package com.arrayandstring;
 /**
  * This is temporary work space where I use this to try something code syntax, 
  * temporary checking of code, etc. No problem or its solution in here.
