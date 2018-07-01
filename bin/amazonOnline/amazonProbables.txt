@@ -1,0 +1,40 @@
+1st round
+	is a subtree
+	paranthesis
+	circular linked list node add 
+	bfs print
+	from origin, k nearest points
+	2nd half linked list reverse
+	reverse a second half
+m,n matrix
+flag 1 by 90 right
+flag 0 90 left rotate
+
+
+- second
+round robin scheduling
+shortest job first
+grid 0-9, top left to 9 9*9 , 0,1 , 0 not, 1 yes, horizontally and vertically pass hu shakto not diagonally
+GCD
+active .. inactive
+queue using stack
+longest pallindromic substring
+longest pallidromic subsequence
+paranthesis combination
+coin change problem
+minstack
+suffle cards
+k smallest elements
+k largest elements
+k points close to origin
+
+/////// Ashu ////
+
+1. paranthesis combination
+2. topological sort, shortest path
+stack using queue
+tree is a subtree
+
+
+
+23280027587933
