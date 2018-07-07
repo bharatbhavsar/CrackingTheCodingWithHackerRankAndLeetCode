@@ -22,6 +22,7 @@ public class PalindromCheck {
 		
 		System.out.println("Given linked list is Palindrom: (true/ false) :: " + obj.checkPalindrom(myLink, reverse));
 		System.out.println("Given linked list is Palindrom: (true/ false) :: " + obj.isItPalindrom(myLink));
+		in.close();
 	}
 	
 	myNode reverseLinkList(myNode node){

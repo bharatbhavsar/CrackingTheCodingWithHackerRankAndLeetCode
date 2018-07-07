@@ -19,6 +19,7 @@ public class DeleteGivenNode {
 		DeleteGivenNode obj = new DeleteGivenNode();
 		boolean isDeleted = obj.deleteGivenNode(myLink);
 		System.out.println("Success?: " + isDeleted);
+		in.close();
 		
 	}
 	

@@ -19,7 +19,7 @@ public class ReturnKthToLast {
 		ReturnKthToLast obj = new ReturnKthToLast();
 		myNode kthNodeFromLast = obj.kthToLast(myLink, 5);
 		System.out.println(kthNodeFromLast);
-		
+		in.close();
 	}
 	
 	myNode kthToLast(myNode node, int k){

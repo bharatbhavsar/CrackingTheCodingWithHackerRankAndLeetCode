@@ -24,6 +24,7 @@ public class RemoveDuplicateLinkedList {
 			System.out.print(forPrinting.data + " ");
 			forPrinting = forPrinting.next;
 		}
+		in.close();
 	}
 	
 	void deleteDuplicate(myNode myLink){

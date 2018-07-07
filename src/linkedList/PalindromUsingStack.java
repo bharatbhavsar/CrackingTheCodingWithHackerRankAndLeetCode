@@ -20,6 +20,7 @@ public class PalindromUsingStack {
 		PalindromUsingStack obj = new PalindromUsingStack();
 		
 		System.out.println("Given linked list is Palindrom: (true/ false) :: " + obj.isPalindrom(myLink));
+		in.close();
 	}
 	
 	boolean isPalindrom(myNode myLink){

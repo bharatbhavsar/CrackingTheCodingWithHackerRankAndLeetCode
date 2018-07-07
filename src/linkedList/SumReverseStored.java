@@ -32,6 +32,7 @@ public class SumReverseStored {
 			System.out.print(result.data + " ->");
 			result = result.next;
 		}
+		in.close();
 	}
 	
 	myNode mySum(myNode first, myNode second, int carry){

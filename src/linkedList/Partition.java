@@ -25,6 +25,7 @@ public class Partition {
 			temp = temp.next;
 		}
 		System.out.print(temp.data );
+		in.close();
 	}
 	
 	myNode myPartition(myNode node, int pivot){
