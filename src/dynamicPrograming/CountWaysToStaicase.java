@@ -13,8 +13,14 @@ import java.util.Arrays;
 public class CountWaysToStaicase {
 
 	public static void main(String[] args){
-		System.out.println(countWaysBruteforce(10));
-		System.out.println(countWaysMemoization(10));
+		long start = System.nanoTime(); 
+		System.out.println(countWaysBruteforce(30));
+		long end = System.nanoTime();
+		System.out.println("time for first:" + (end-start));
+		start = System.nanoTime();
+		System.out.println(countWaysMemoization(30));
+		end = System.nanoTime();
+		System.out.println("time for second:" + (end-start));
 	}
 	public static int countWaysBruteforce(int stairs){
 		if(stairs<0){
