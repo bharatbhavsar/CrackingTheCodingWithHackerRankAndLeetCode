@@ -14,7 +14,7 @@ package LeetCode;
 public class IsUglyNumber {
 
 	public static void main(String[] args){
-		System.out.println(isUgly(24));
+		System.out.println(isUgly(8));
 	}
 	public static boolean isUgly(int num) {
         if(num==1){

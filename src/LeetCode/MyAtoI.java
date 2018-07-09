@@ -9,6 +9,7 @@ public class MyAtoI {
 		given = in.nextLine();
 		MyAtoI obj = new MyAtoI();
 		System.out.println("Converted string to int is: " + obj.myAtoi(given));
+		in.close();
 	}
 	
 	int myAtoi(String str) {

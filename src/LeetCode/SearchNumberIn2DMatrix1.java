@@ -33,6 +33,7 @@ public class SearchNumberIn2DMatrix1 {
 		}
 		SearchNumberIn2DMatrix1 obj = new SearchNumberIn2DMatrix1();
 		System.out.println("Is element available:(true/flase):: " + obj.searchMatrix(matrix, 15));
+		in.close();
 	}
 	
 	public boolean searchMatrix(int[][] matrix, int target) {

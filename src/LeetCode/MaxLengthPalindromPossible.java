@@ -25,8 +25,14 @@ import java.util.HashSet;
 public class MaxLengthPalindromPossible {
 
 	public static void main(String[] args){
+		long start = System.nanoTime();
 		System.out.println(longestPalindrome1("abccdssdfrrderksderfffedssrwefdta"));
+		long end = System.nanoTime();
+		System.out.println("First: " + (end-start));
+		start = System.nanoTime();
 		System.out.println(longestPalindrome2("abccdssdfrrderksderfffedssrwefdta"));
+		end = System.nanoTime();
+		System.out.println("Second: " + (end-start));
 	}
 	
 	public static int longestPalindrome2(String s){

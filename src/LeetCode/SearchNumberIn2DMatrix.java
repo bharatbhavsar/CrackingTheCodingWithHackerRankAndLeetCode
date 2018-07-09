@@ -38,6 +38,7 @@ public class SearchNumberIn2DMatrix {
 		}
 		SearchNumberIn2DMatrix obj = new SearchNumberIn2DMatrix();
 		System.out.println("Is element available:(true/flase):: " + obj.searchMatrix(matrix, 15));
+		in.close();
 	}
 	
 	public boolean searchMatrix(int[][] matrix, int target) {

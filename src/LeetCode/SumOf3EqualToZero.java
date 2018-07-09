@@ -24,7 +24,8 @@ public class SumOf3EqualToZero {
 
 	public static void main(String[] args){
 		int[] nums = {-1, 0, 1, 2, -1, -4};
-		System.out.println(threeSum(nums));
+		System.out.println("Given Array: " + Arrays.toString(nums));
+		System.out.println("Result: "+threeSum(nums));
 	}
 	public static List<List<Integer>> threeSum(int[] nums) {
         
