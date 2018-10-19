@@ -29,6 +29,6 @@ public class IndexMinDistance {
         if(min==Integer.MAX_VALUE)
             min=-1;
         System.out.println(min);
-        
+        in.close();
     }
 }

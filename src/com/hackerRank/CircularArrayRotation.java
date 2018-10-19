@@ -67,5 +67,6 @@ public class CircularArrayRotation {
                 System.out.println(myArray[temp-rotation+arrayLen]);
             }
         }
+        in.close();
     }
 }

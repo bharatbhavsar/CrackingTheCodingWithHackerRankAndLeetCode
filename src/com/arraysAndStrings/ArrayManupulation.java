@@ -1,3 +1,6 @@
+/**
+ * Link: https://www.hackerrank.com/challenges/crush/problem
+ */
 package com.arraysAndStrings;
 
 import java.io.*;

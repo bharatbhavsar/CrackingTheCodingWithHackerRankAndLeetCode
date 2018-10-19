@@ -12,18 +12,14 @@ public class ZeroMatrixMaker {
 		for(int i =0; i<numberOfRows;i++){
 			for(int j=0; j<numberOfColumns;j++){
 				matrix[i][j]=in.nextInt();
-				
 			}
-			
 		}
 		System.out.println("\nOriginal Matrix:\n");
 		for(int i =0; i<numberOfRows;i++){
 			for(int j=0; j<numberOfColumns;j++){
 				System.out.print(matrix[i][j]+ " ");
-				
 			}
 			System.out.println();
-			
 		}
 		ZeroMatrixMaker obj = new ZeroMatrixMaker();
 		matrixZerowed = obj.zeroMaker(matrix);
@@ -32,10 +28,8 @@ public class ZeroMatrixMaker {
 		for(int i =0; i<numberOfRows;i++){
 			for(int j=0; j<numberOfColumns;j++){
 				System.out.print(matrixZerowed[i][j]+ " ");
-				
 			}
 			System.out.println();
-			
 		}
 	}
 	

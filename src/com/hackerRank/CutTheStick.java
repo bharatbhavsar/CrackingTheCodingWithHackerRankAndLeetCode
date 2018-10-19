@@ -62,5 +62,6 @@ public class CutTheStick {
             i++;
             sizeRemaining -=currentDeleted;
         }
+        in.close();
     }
 }

@@ -16,7 +16,7 @@ public class SumOfStrings {
 	
 	public static void main(String[] args){
 		String one = "123";
-		String two = "456";
+		String two = "4756";
 		System.out.println(addStrings(one, two));
 	}
     public static String addStrings(String num1, String num2) {

@@ -2,10 +2,6 @@ package com.goDaddyHackerRankTest;
 
 public class DeleteNode {
 
-	
-	
-
-	
 	public static void main(String[] args){
 		LinkedListNode temp = new LinkedListNode();
 		LinkedListNode head = temp;

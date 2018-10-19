@@ -1,5 +1,7 @@
 package com.arraysAndStrings;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class isPalindrom {
 	
@@ -42,6 +44,23 @@ static boolean isThisPalindrom(String s){
 		return countOdd <=1;
 	}
 	
+	static boolean isPalindromBySet(String s){
+		Set<Character> set = new HashSet<Character>();
+		
+		for(int i = 0 ; i < s.length(); i++ ){
+			if(set.contains(s.charAt(i))){
+				set.remove(s.charAt(i));
+			}else{
+				set.add(s.charAt(i));
+			}
+		}
+		if(set.size()>1){
+			return false;
+		}else{
+			return true;
+		}
+	}
+	
 	public static void main(String[] args){
 		String s;
 		Scanner in = new Scanner(System.in);
@@ -55,6 +74,8 @@ static boolean isThisPalindrom(String s){
 		System.out.println("Is given string palindrom? (true/alse): " + isThisPalindrom(s));
 		
 		System.out.println("Is given string palindrom? (true/alse): " + isPalindromePossible(s));
+		
+		System.out.println("Is given string palindrom? (true/alse): " + isPalindromBySet(s));
 		
 	}
 }

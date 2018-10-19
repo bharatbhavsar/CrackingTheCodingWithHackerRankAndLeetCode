@@ -14,11 +14,11 @@ public class CountWaysToStaicase {
 
 	public static void main(String[] args){
 		long start = System.nanoTime(); 
-		System.out.println(countWaysBruteforce(30));
+		System.out.println(countWaysBruteforce(35));
 		long end = System.nanoTime();
 		System.out.println("time for first:" + (end-start));
 		start = System.nanoTime();
-		System.out.println(countWaysMemoization(30));
+		System.out.println(countWaysMemoization(35));
 		end = System.nanoTime();
 		System.out.println("time for second:" + (end-start));
 	}
