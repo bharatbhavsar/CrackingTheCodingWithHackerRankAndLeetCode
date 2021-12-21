@@ -48,5 +48,6 @@ public class SavePrisoner {
                 System.out.println(result);
             }
         }
+        in.close();
     }
 }

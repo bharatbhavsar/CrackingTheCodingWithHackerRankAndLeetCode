@@ -9,6 +9,7 @@ public class ThreeStackUsingArray {
 		System.out.println("Enter stack size for each stack: ");
 		Scanner in = new Scanner(System.in);
 		int stackSize = in.nextInt();
+		in.close();
 		FixedMultiStack myStack = new FixedMultiStack(stackSize);
 		
 		/**

@@ -11,7 +11,7 @@ public class StringRotation {
 		s1 = in.nextLine();
 		System.out.println("\nEnter second string:");
 		s2 = in.nextLine();
-		
+		in.close();
 		int len = s1.length();
 		if(len == s2.length() && len > 0){
 			String s1s1 = s1 + s1;

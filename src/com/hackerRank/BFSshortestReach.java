@@ -127,7 +127,8 @@ public class BFSshortestReach {
                         adjacency_matrix[i][j] = Integer.MAX_VALUE;  
                     }  
                 }  
-            }  
+            }
+            s.close();
             BFSshortestReach dijkstrasAlgorithm = new BFSshortestReach(number_of_vertices);  
             dijkstrasAlgorithm.dijkstra_algorithm(adjacency_matrix, source);  
             for (int i = 1; i <= dijkstrasAlgorithm.distances.length - 1; i++)  

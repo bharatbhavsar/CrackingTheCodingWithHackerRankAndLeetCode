@@ -15,7 +15,7 @@ public class MatrixRotationNXN {
 				result[i][j]=matrix[i][j];
 			}
 		}
-		
+		in.close();
 		System.out.println("\nOriginal Matrix:\n");
 		for(int i =0; i<numberOfRows;i++){
 			for(int j=0; j<numberOfRows;j++){

@@ -12,7 +12,7 @@ public class StringCompressor {
 		
 		System.out.println("Please enter the line: ");
 		s = in.nextLine();
-		
+		in.close();
 		System.out.println("Compressed String: " + obj.compressor(s));
 	}
 	

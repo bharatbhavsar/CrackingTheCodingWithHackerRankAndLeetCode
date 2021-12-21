@@ -21,6 +21,7 @@ public class MaximumSubarray {
             }
             maxSubArray(arr);
         }
+        in.close();
     }
     
     static void maxSubArray(int[] arr){

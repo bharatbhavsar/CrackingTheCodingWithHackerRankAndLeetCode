@@ -67,5 +67,6 @@ public class LaxicalOrdingOfWords {
                 System.out.println(new String(newWord));
             }
         }
+        in.close();
     }
 }

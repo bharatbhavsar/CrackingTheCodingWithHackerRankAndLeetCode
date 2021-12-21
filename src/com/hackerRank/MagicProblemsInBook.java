@@ -35,5 +35,6 @@ public class MagicProblemsInBook {
             }
         }
         System.out.println(magicProblems);
+        in.close();
     }
 }

@@ -26,5 +26,6 @@ public class LoveLetterMystery {
             }
             System.out.println(change);
         }
+        in.close();
     }
 }

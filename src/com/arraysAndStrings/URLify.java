@@ -13,6 +13,7 @@ public class URLify {
 		
 		
 		s = spaceReplacer(s);
+		in.close();
 		System.out.println("\n NewString: \n" + s);
 	}
 	

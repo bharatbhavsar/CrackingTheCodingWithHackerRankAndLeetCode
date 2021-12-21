@@ -13,6 +13,7 @@ public class TimeConversion {
         String time = sc.nextLine();
         SimpleDateFormat format = new SimpleDateFormat("hh:mm:ssa", Locale.getDefault());
         SimpleDateFormat writeFormat = new SimpleDateFormat("HH:mm:ss");
+        sc.close();
         Date date = null;
         try{
             date = format.parse(time);

@@ -48,6 +48,6 @@ public class NonDivisibleSubset {
 		}
 		
 		System.out.println(noOfElementsInSubset);
-        
+        in.close();
     }
 }

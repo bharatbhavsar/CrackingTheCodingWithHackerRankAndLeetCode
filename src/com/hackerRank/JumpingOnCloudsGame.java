@@ -21,6 +21,6 @@ public class JumpingOnCloudsGame {
             if (i<n-2 && c[i+2]==0) i++;
         }
         System.out.println(jumps);
-        
+        in.close();
     }
 }

@@ -32,6 +32,7 @@ public class LaxicalOrdingOfWords {
         for(int i = 0; i<numberOfWords; i++){
             words[i] = in.nextLine();
         }
+        in.close();
         
         for(int i = 0; i<numberOfWords; i++){
             

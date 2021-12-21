@@ -70,7 +70,7 @@ static boolean isThisPalindrom(String s){
 		s = in.nextLine();
 		s = s.trim();
 		s = s.toLowerCase();
-		
+		in.close();
 		System.out.println("Is given string palindrom? (true/alse): " + isThisPalindrom(s));
 		
 		System.out.println("Is given string palindrom? (true/alse): " + isPalindromePossible(s));

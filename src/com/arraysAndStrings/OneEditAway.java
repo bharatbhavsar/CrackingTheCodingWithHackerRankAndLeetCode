@@ -11,7 +11,7 @@ public class OneEditAway {
 		first = in.nextLine();
 		System.out.println("\nEnter second string: \n");
 		second = in.nextLine();
-
+		in.close();
 		OneEditAway obj = new OneEditAway();
 		if(first.length()==second.length()){
 			isOneEditAway=obj.oneEditReplace(first, second);

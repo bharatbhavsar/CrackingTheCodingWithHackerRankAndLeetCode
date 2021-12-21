@@ -16,6 +16,7 @@ public class MatrixRotationMXN {
 			}
 			
 		}
+		in.close();
 		System.out.println("\nOriginal Matrix:\n");
 		for(int i =0; i<numberOfRows;i++){
 			for(int j=0; j<numberOfColumns;j++){

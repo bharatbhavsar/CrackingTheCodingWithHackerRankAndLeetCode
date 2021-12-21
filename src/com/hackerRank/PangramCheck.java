@@ -25,6 +25,7 @@ public class PangramCheck {
         HashSet<Character> chars = new HashSet<Character>();
         Scanner in = new Scanner(System.in);
         String line = in.nextLine();
+        in.close();
         line = line.toLowerCase();
         for(int i=0; i<line.length(); i++){
             if(line.charAt(i)!=' ' && !chars.contains(line.charAt(i))){

@@ -38,5 +38,6 @@ public class NewYearChaos {
                 System.out.println(bribe);
             }
         }
+        in.close();
     }
 }
