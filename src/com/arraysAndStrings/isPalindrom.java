@@ -48,10 +48,12 @@ static boolean isThisPalindrom(String s){
 		Set<Character> set = new HashSet<Character>();
 		
 		for(int i = 0 ; i < s.length(); i++ ){
-			if(set.contains(s.charAt(i))){
-				set.remove(s.charAt(i));
-			}else{
-				set.add(s.charAt(i));
+			if(s.charAt(i) != ' ') {
+				if(set.contains(s.charAt(i))){
+					set.remove(s.charAt(i));
+				}else{
+					set.add(s.charAt(i));
+				}
 			}
 		}
 		if(set.size()>1){
@@ -71,11 +73,11 @@ static boolean isThisPalindrom(String s){
 		s = s.trim();
 		s = s.toLowerCase();
 		in.close();
-		System.out.println("Is given string palindrom? (true/alse): " + isThisPalindrom(s));
+		System.out.println("Is given string palindrom? (true/false): " + isThisPalindrom(s));
 		
-		System.out.println("Is given string palindrom? (true/alse): " + isPalindromePossible(s));
+		System.out.println("Is given string palindrom? (true/false): " + isPalindromePossible(s));
 		
-		System.out.println("Is given string palindrom? (true/alse): " + isPalindromBySet(s));
+		System.out.println("Is given string palindrom? (true/false): " + isPalindromBySet(s));
 		
 	}
 }
