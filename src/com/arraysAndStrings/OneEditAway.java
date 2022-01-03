@@ -8,9 +8,9 @@ public class OneEditAway {
 		boolean isOneEditAway = false;
 		Scanner in = new Scanner(System.in);
 		System.out.println("Enter first string: \n");
-		first = in.nextLine();
+		first = in.nextLine().toLowerCase();
 		System.out.println("\nEnter second string: \n");
-		second = in.nextLine();
+		second = in.nextLine().toLowerCase();
 		in.close();
 		OneEditAway obj = new OneEditAway();
 		if(first.length()==second.length()){
@@ -23,6 +23,7 @@ public class OneEditAway {
 			isOneEditAway=obj.oneEditInsert(second, first);
 		}
 		System.out.println("These 2 strings are one edit away (true/ false): " + isOneEditAway);
+		System.out.println("These 2 strings are one edit away (true/ false): " + obj.oneEdit(first, second));
 		
 	}
 	
