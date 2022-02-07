@@ -1,4 +1,4 @@
-package com.facebook.practice;
+package com.facebook.practice.array;
 
 import java.io.*; 
 import java.util.*;

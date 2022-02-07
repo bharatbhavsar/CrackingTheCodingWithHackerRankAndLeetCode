@@ -1,4 +1,4 @@
-package com.facebook.practice;
+package com.facebook.practice.array;
 
 import java.io.*; 
 import java.util.*;
@@ -35,16 +35,6 @@ public class ContiguousSubarrays {
 	    return res.stream().mapToInt(Integer::intValue).toArray();
 	    
 	  }
-
-
-
-
-
-
-
-
-
-
 
 
 	  // These are the tests we use to determine if the solution is correct.
