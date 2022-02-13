@@ -29,7 +29,6 @@ In the final iteration, both elements are popped off the queue. We remove the on
  * 
  */
 
-import java.io.*; 
 import java.util.*;
 // Add any extra import statements you may need here
 
@@ -147,14 +146,12 @@ public class QueueRemovals {
   }
   
   public void run() {
-    int n_1 = 6;
     int x_1 = 5;
     int[] arr_1 = {1, 2, 2, 3, 4, 5};
     int[] expected_1 = {5, 6, 4, 1, 2 };
     int[] output_1 = findPositions(arr_1, x_1);
     check(expected_1, output_1);
     
-    int n_2 = 13;
     int x_2 = 4;
     int[] arr_2 = {2, 4, 2, 4, 3, 1, 2, 2, 3, 4, 3, 4, 4};
     int[] expected_2 = {2, 5, 10, 13};

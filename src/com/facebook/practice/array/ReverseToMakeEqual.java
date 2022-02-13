@@ -19,7 +19,6 @@ After reversing the subarray of B from indices 1 to 3, array B will equal array 
  * 
  */
 
-import java.io.*; 
 import java.util.*;
 // Add any extra import statements you may need here
 

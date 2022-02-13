@@ -22,9 +22,7 @@ output = 4
  * 
  */
 
-import java.io.*; 
-import java.util.*;
-// Add any extra import statements you may need here
+import java.io.*;
 
 
 public class NumberOfVisibleNodes {

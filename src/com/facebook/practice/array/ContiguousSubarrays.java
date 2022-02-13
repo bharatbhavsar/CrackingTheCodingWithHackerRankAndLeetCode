@@ -25,7 +25,6 @@ So, the answer for the above input is [1, 3, 1, 5, 1]
  * 
  */
 
-import java.io.*; 
 import java.util.*;
 
 

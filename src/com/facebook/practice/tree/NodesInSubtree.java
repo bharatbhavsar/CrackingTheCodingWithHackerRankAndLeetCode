@@ -152,10 +152,6 @@ public class NodesInSubtree {
   }
   
   public void run() throws IOException {
-    Scanner sc = new Scanner(System.in);
-
-    //Testcase 1
-    int n_1 = 3, q_1 = 1;
     String s_1 = "aba";
     Node root_1 = new Node(1); 
     root_1.children.add(new Node(2)); 
@@ -166,8 +162,6 @@ public class NodesInSubtree {
     int[] expected_1 = {2};
     check(expected_1, output_1); 
     
-    // Testcase 2
-    int n_2 = 7, q_2 = 3;
     String s_2 = "abaacab";
     Node root_2 = new Node(1); 
     root_2.children.add(new Node(2)); 

@@ -28,7 +28,6 @@ Two indices have to be swapped, regardless of which two it is, only one letter w
  * 
  */
 
-import java.io.*; 
 import java.util.*;
 // Add any extra import statements you may need here
 
