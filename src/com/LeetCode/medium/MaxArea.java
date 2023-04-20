@@ -1,7 +1,5 @@
 package com.LeetCode.medium;
 
-import java.util.Scanner;
-
 /*
  * 
  * 
