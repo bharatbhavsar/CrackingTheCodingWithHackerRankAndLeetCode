@@ -59,6 +59,32 @@ public class ContiguousSubarrays {
 	    return res.stream().mapToInt(Integer::intValue).toArray();
 	    
 	  }
+	  
+	  int[] countSubarrays2(int[] arr) {
+		  int[] res = new int[arr.length];
+		  for(int i = 0; i < arr.length; i++) {
+			  int j =i;
+			  int isMaxRight = 0;
+			  while(j<arr.length-1) {
+				  j++;
+				  if(arr[j] >= arr[i]) {
+					  break;
+				  }
+				  isMaxRight++;
+			  }
+			  j=i;
+			  int isMaxLeft = 0;
+			  while(j>0) {
+				  j--;
+				  if(arr[j] >= arr[i]) {
+					  break;
+				  }
+				  isMaxLeft++;
+			  }
+			  res[i] = 1 + isMaxRight + isMaxLeft;
+		  }
+		  return res;
+	  }
 
 
 	  // These are the tests we use to determine if the solution is correct.
@@ -102,7 +128,7 @@ public class ContiguousSubarrays {
 	  public void run() {
 	    int[] test_1 = {3, 4, 1, 6, 2};
 	    int[] expected_1 = {1, 3, 1, 5, 1};
-	    int[] output_1 = countSubarrays(test_1);
+	    int[] output_1 = countSubarrays2(test_1);
 	    check(expected_1, output_1);
 	    
 	    int[] test_2 = {2, 4, 7, 1, 5, 3};

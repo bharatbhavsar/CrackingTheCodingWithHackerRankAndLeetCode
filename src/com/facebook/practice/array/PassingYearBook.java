@@ -53,7 +53,7 @@ public class PassingYearBook {
 	    // Write your code here
 	    ArrayList<Integer> std = new ArrayList<Integer>(arr.length);
 	    for(int i=0; i < arr.length; i++){
-	      std.add(new Integer(arr[i]));
+	      std.add(Integer.valueOf(arr[i]));
 	    }
 	    ArrayList<Integer> book = new ArrayList<Integer>(std);
 	    ArrayList<Integer> res = new ArrayList<Integer>(Collections.nCopies(arr.length, 0));
@@ -69,7 +69,7 @@ public class PassingYearBook {
 	            }
 	        }
 	        for(Integer i:toRemove){
-	            res.set(i - 1, new Integer(numberOfSigns));
+	            res.set(i - 1, Integer.valueOf(numberOfSigns));
 	            int j = std.indexOf(i);
 	            book.set(j, 0);
 	            out_of_loop.add(i);
@@ -90,15 +90,6 @@ public class PassingYearBook {
 	    }
 	    return newBook;
 	  }
-
-
-
-
-
-
-
-
-
 
 	  // These are the tests we use to determine if the solution is correct.
 	  // You can add your own at the bottom.
