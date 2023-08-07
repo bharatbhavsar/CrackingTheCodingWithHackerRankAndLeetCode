@@ -38,7 +38,7 @@ images[i][j] is either 0 or 1.
 import java.util.*;
 
 public class MatrixReverseInvert {
-	public int[][] flipAndInvertImage(int[][] image) {
+	public static int[][] flipAndInvertImage(int[][] image) {
         ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
         for(int i = 0; i < image.length;i++){
             ArrayList<Integer> temp = new ArrayList<Integer>();
@@ -63,4 +63,30 @@ public class MatrixReverseInvert {
         
         return resFinal;
     }
+	
+	public static int[][] flipAndInvertImage2(int[][] image) {
+        for(int i = 0; i < image.length; i++){
+            for(int j = 0, k = image[i].length-1; j<=k; j++, k--){
+                int temp = image[i][j];
+                image[i][j] = image[i][k];
+                image[i][k] = temp;
+            }
+        }
+        for(int i = 0; i < image.length; i++){
+            for(int j = 0;  j< image[i].length; j++){
+                if(image[i][j]==1)
+                    image[i][j]=0;
+                else
+                    image[i][j]=1;
+            }
+        }
+        return image;
+    }
+	
+	public static void main(String[] args) {
+		int[][] sampleInput = {{1,1,0},{1,0,1},{0,0,0}};
+		
+		System.out.println(Arrays.deepToString(flipAndInvertImage(sampleInput)));
+		System.out.println(Arrays.deepToString(flipAndInvertImage2(sampleInput)));
+	}
 }
